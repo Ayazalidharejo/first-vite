@@ -1,0 +1,267 @@
+body {
+  background-color: black;
+}
+
+@layer demo {
+  .section {
+    --section-block-size: max(200px, 100dvb); /* Reduced height from 400px to 200px */
+  }
+
+  .section-wrapper {
+    position: relative;
+    display: grid;
+
+    @media (min-width: 960px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .content {
+    display: grid;
+    inline-size: 100%;
+    place-items: center;
+    padding-block: var(--size-7);
+    padding-inline: var(--size-5);
+
+    @media (min-width: 960px) {
+      padding: var(--size-10);
+      min-block-size: 100cqb;
+      place-items: center end;
+    }
+  }
+
+  .desc {
+    font-size: var(--font-size-4);
+    line-height: 1.5;
+    max-inline-size: 40ch;
+    text-wrap: pretty;
+  }
+
+  .visual {
+    display: grid;
+    position: sticky;
+    block-size: var(--section-block-size);
+    inset-block-start: 0;
+    container-type: size;
+  }
+
+  /* Hide images on mobile devices (480px and smaller) */
+  @media (max-width: 480px) {
+    .visual {
+      display: none; /* Hides the visual content (images) on mobile */
+    }
+    .content-1 {
+      background-color: #804772;
+margin: 10px 0px !important;
+padding: 10px;
+
+
+     
+    }
+    .content-2 {
+      background-color: #804772;
+  margin: 10px 0px !important;
+    }
+    .content-3 {
+      background-color: #804772;
+     margin: 10px 0px !important;
+    }
+    .content-4 {
+     background-color: #804772;
+     margin: 10px 0px !important;
+     
+    }
+   
+    
+  }
+
+  .card-wrapper {
+    container-type: size;
+    display: grid;
+    place-items: center;
+    overflow: clip;
+
+    > * {
+      grid-area: 1/1;
+    }
+  }
+
+  .card {
+    aspect-ratio: var(--ratio-square);
+    inline-size: 70cqi;
+    border-radius: var(--radius-3);
+    scale: 0.4;
+  }
+
+  .card-1 {
+    scale: 1;
+  }
+
+  .card-2 {
+    translate: -35cqi 30cqb;
+    opacity: 0.3;
+  }
+
+  .card-3 {
+    translate: 0cqi 50cqb;
+    opacity: 0.5;
+  }
+
+  .card-4 {
+    translate: 45cqi 40cqb;
+    opacity: 0.5;
+  }
+
+  /* Content Styles for each card */
+  .content-1 {
+    --_text-gradient: linear-gradient(227deg, #1400c7 0%, #00bbff 100%);
+  }
+
+  .content-2 {
+    --_text-gradient: linear-gradient(227deg, #28dc28 0%, #00bbff 100%);
+  }
+
+  .content-3 {
+    --_text-gradient: linear-gradient(227deg, #1400c7 0%, #b800b1 100%);
+  }
+
+  .content-4 {
+    --_text-gradient: linear-gradient(227deg, #b800b1 0%, #f50000 100%);
+    
+    
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  body {
+    timeline-scope: --content-1, --content-2, --content-3, --content-4;
+  }
+
+  .section {
+    view-timeline-name: --section;
+
+  }
+
+  .content-1 {
+    view-timeline-name: --content-1;
+   
+  }
+
+  .content-2 {
+    view-timeline-name: --content-2;
+   
+  }
+
+  .content-3 {
+    view-timeline-name: --content-3;
+ 
+  }
+
+  .content-4 {
+    view-timeline-name: --content-4;
+ 
+  }
+
+  /* Animation for cards 1 to 4 */
+  .card {
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  .card-1 {
+    animation-timeline: --content-1;
+    animation-name: slide-up-first-card;
+  }
+
+  .card-2 {
+    animation-timeline: --content-2;
+    animation-name: slide-up-card;
+  }
+
+  .card-3 {
+    animation-timeline: --content-3;
+    animation-name: slide-up-card;
+  }
+
+  .card-4 {
+    animation-timeline: --content-4;
+    animation-name: slide-up-card;
+ 
+  }
+
+  @keyframes update-hue {
+    0% {
+      filter: hue-rotate(210deg);
+    }
+    25% {
+      filter: hue-rotate(150deg);
+    }
+    45% {
+      filter: hue-rotate(300deg);
+    }
+    60% {
+      filter: hue-rotate(4deg);
+    }
+  }
+
+  @keyframes slide-up-first-card {
+    50% {
+      translate: 0;
+      opacity: 1;
+    }
+
+    90% {
+      translate: 0 -50cqi;
+      scale: 0.6;
+    }
+
+    100% {
+      translate: 0 -100cqi;
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-up-card {
+    50% {
+      opacity: 1;
+      translate: 0;
+      scale: 1;
+    }
+
+    90% {
+      opacity: 0.5;
+      scale: 0.6;
+      translate: 0 -50cqb;
+    }
+
+    100% {
+      translate: 0 -100cqi;
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes background {
+  from {
+    background-position: 0 0%;
+  }
+  to {
+    background-position: 0 -200px;
+  }
+}
+
+p {
+  color: #f2f5fe;
+  text-align: center;
+  font-size: 30px;
+
+  background: -webkit-linear-gradient(transparent, transparent),
+    url(http://html5book.ru/wp-content/uploads/2016/08/bubbles.png) repeat;
+  background-size: 200px auto;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: background 10s infinite linear;
+}
+.desc{
+  color: white;
+}

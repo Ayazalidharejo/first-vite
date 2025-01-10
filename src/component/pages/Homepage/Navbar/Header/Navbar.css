@@ -1,0 +1,23 @@
+/* button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  background: linear-gradient(135deg, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 50%, rgb(243, 119, 3) 50%, rgb(255, 86, 8) 60%);
+  border-radius: 0 0 0.5em 0;
+  transition: 0.3s ease-in-out;
+}
+
+
+button:hover::before {
+  width: 1.6em;
+  height: 1.6em;
+}
+
+button:active {
+  transform: translate(0.1em, 0.1em);
+  background-color: orange;
+  color: white;
+} */

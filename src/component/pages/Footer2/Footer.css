@@ -1,0 +1,81 @@
+
+   .social-link {
+   
+    transition: transform 0.6s ease, border-bottom 0.6s ease;  
+    border-bottom: 2px solid transparent;  
+  }
+  
+  .social-link:hover {
+    transform: translateY(-2px); 
+    border-bottom: 2px solid white;  
+  }
+  
+  .Dote {
+    position: absolute;
+    top: -5px;
+    content: '';
+    display: block;
+    width: 10px; 
+    height: 10px;  
+    background-color: white;  
+    border-radius: 50%;  
+  }
+  .Dote2 {
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    content: '';
+    display: block;
+    width: 10px;  
+    height: 10px;  
+    background-color: white;  
+    border-radius: 50%;  
+  }
+  
+ 
+  
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+  .text3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    color: white;
+  
+    &:before, &:after {
+      transition: all 1s ease;
+      width: 0%;
+    }
+  
+    &:after {
+      content: attr(data-content);
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: orange;
+      overflow: hidden;
+      border-radius: 2000px;
+    }
+  
+    &:hover:after {
+      width: 100%;
+      border-radius: 0px;
+    }
+  }
+  
+
+  .text3:hover + .double-dote {
+    display: none;
+  }
+  
+  .double-dote {
+    color: orange;
+  }
+  
+  @media(max-width:480px){
+    .work{
+        display: none;
+    }
+  }

@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import './index.css'; // Ensure Tailwind CSS is imported here
+import Navbar from "./component/pages/Homepage/Navbar/Navebar";
+import HeroSectiony from "./component/HeroSectionRound/HeroSection";
+
+import ImageGrid from './component/ImageGalery/Galery'
+import ServicePage from './component/ServicePage/ServicePage'
+import Galery from './component/ImageGalery/Galery'
+import Ourblog from './component/OurBlog/Ourblog'
+import Footer2 from './component/pages/Footer2/Footer2'
+import Marquee from './component/HeadingSection/HeadingSection'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+   <>
+   <Navbar/>
+   <div>
+
+
+  
+<section id="home"  className='pt-24'>
+
+  <HeroSectiony/>
+</section>
+
+<section id="Marquee" >
+  <Marquee />
+</section>
+
+
+<section id="Testimonials" >
+  <ImageGrid />
+</section>
+
+<section id="Services">
+  <ServicePage />
+</section>
+
+<section id="About" >
+  <Galery />
+</section>
+<section id="Blog" >
+  <Ourblog />
+
+</section>
+<section id="Blog bg-gray-600" >
+  <Footer2 />
+
+</section>
+
+</div>
+   </>
+  );
 }
 
-export default App
+export default App;
