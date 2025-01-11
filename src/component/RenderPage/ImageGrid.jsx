@@ -29,10 +29,10 @@ const ImageGrid = () => {
     image8,
     image9,
     image10,
-    image11,
-    image12,
-    image13,
-    image14,
+    // image11,
+    // image12,
+    // image13,
+    // image14,
   ];
 
   const texts = [
@@ -46,10 +46,10 @@ const ImageGrid = () => {
     "Bird Perched on Branch Bird Perched on Branch Bird Perched on Branch Bird Perched on Branch Bird Perched on Branch ",
     "Exotic Bird",
     "Colorful Bird",
-    "Another Workstation",
-    "Another Front-end Design",
-    "Another Laptop View",
-    "Another Creative Cartoon",
+    // "Another Workstation",
+    // "Another Front-end Design",
+    // "Another Laptop View",
+    // "Another Creative Cartoon",
   ];
 
 

@@ -32,7 +32,7 @@
 }
 
 .item.active {
-  width: 28vw;
+  width: 38vw;
   filter: grayscale(0) brightness(1);
   transform: scale(1.2);
   z-index: 10;

@@ -5,12 +5,12 @@ import './index.css'; // Ensure Tailwind CSS is imported here
 import Navbar from "./component/pages/Homepage/Navbar/Navebar";
 import HeroSectiony from "./component/HeroSectionRound/HeroSection";
 
-import ImageGrid from './component/ImageGalery/Galery'
 import ServicePage from './component/ServicePage/ServicePage'
 import Galery from './component/ImageGalery/Galery'
 import Ourblog from './component/OurBlog/Ourblog'
 import Footer2 from './component/pages/Footer2/Footer2'
 import Marquee from './component/HeadingSection/HeadingSection'
+import ImageGrid from "./component/RenderPage/ImageGrid";
 
 function App() {
   return (
@@ -30,9 +30,7 @@ function App() {
 </section>
 
 
-<section id="Testimonials" >
-  <ImageGrid />
-</section>
+
 
 <section id="Services">
   <ServicePage />
@@ -44,6 +42,9 @@ function App() {
 <section id="Blog" >
   <Ourblog />
 
+</section>
+<section id="Testimonials" >
+  <ImageGrid />
 </section>
 <section id="Blog bg-gray-600" >
   <Footer2 />
